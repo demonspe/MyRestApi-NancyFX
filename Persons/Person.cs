@@ -16,5 +16,15 @@ namespace Persons
                 (DateTime.Now.Year - BirthDay.Year) :
                 (DateTime.Now.Year - BirthDay.Year - 1);
         }
+
+        /// <summary> Create instance </summary>
+        /// <param name="name">Name of person</param>
+        /// <param name="birthDay">Birthday date</param>
+        /// <returns></returns>
+        public static Person Create(string name, DateTime birthDay)
+        {
+            var p = new Person() { Id = Guid.NewGuid(), Name = name, BirthDay = birthDay };
+            return p.Age < 120 ? p : null; 
+        }
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Persons
+namespace Persons.Commands
 {
     public interface ICommandHandler<in TCommand> where TCommand : ICommand
     {

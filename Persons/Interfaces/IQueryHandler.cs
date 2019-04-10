@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Persons
+namespace Persons.Queries
 {
-    public interface ICommand
+    interface IQueryHandler<in TQuery> where TQuery : IQuery
     {
+        void Handle(TQuery query);
     }
 }
